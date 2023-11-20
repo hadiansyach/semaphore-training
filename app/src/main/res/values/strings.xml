@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">STRAP</string>
+    <string name="header_text">Semaphore Translator</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="txt_slogan">Mengurai Bahasa Semaphore Dengan Mudah</string>
+</resources>
