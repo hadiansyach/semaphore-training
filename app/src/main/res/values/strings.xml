@@ -3,4 +3,5 @@
     <string name="header_text">Semaphore Translator</string>
     <string name="btn_get_started">Get Started</string>
     <string name="txt_slogan">Mengurai Bahasa Semaphore Dengan Mudah</string>
+    <string name="switchDarkLight">Switch to %1$s mode</string>
 </resources>
