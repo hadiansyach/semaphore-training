@@ -18,12 +18,16 @@
         <activity
             android:name=".ui.splashscreen.SplashScreen"
             android:exported="true">
-            <intent-filter>
+          <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"/>
+            
         <activity
             android:name=".ui.learn.LearnActivity"
             android:exported="false" />
@@ -32,7 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.get_started.WelcomeActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>
