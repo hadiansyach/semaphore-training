@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtSlogan"
         tools:text="@tools:sample/lorem/random" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnGetStarted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
