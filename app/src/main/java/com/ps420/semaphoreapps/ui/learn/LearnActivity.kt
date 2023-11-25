@@ -1,12 +1,12 @@
-package com.ps420.semaphoreapps.ui.home
+package com.ps420.semaphoreapps.ui.learn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ps420.semaphoreapps.R
 
-class WelcomeActivity : AppCompatActivity() {
+class LearnActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        setContentView(R.layout.activity_learn)
     }
 }

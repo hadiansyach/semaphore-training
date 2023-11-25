@@ -4,37 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.WelcomeActivity">
+    tools:context=".ui.get_started.WelcomeActivity">
 
     <ImageView
         android:id="@+id/imgSemaphoreFlag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_width="37dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_semaphore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtHeadline"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:text="@string/header_text"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgSemaphoreFlag"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgSemaphoreFlag"
-        app:layout_constraintTop_toTopOf="@+id/imgSemaphoreFlag"
-        android:layout_marginHorizontal="16dp" />
+        app:layout_constraintTop_toTopOf="@+id/imgSemaphoreFlag" />
 
     <ImageView
         android:id="@+id/imgIllustration"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62sp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/ilustrasi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/txtHeadline"
+        app:layout_constraintStart_toStartOf="@+id/imgSemaphoreFlag"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeadline" />
 
     <TextView
         android:id="@+id/txtSlogan"
@@ -44,8 +46,8 @@
         android:text="@string/txt_slogan"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgIllustration"
+        app:layout_constraintStart_toStartOf="@+id/imgIllustration"
         app:layout_constraintTop_toBottomOf="@id/imgIllustration" />
 
     <TextView
@@ -54,18 +56,22 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:maxLines="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtSlogan"
+        app:layout_constraintStart_toStartOf="@+id/txtSlogan"
         app:layout_constraintTop_toBottomOf="@+id/txtSlogan"
         tools:text="@tools:sample/lorem/random" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGetStarted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_100"
         android:text="@string/btn_get_started"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
