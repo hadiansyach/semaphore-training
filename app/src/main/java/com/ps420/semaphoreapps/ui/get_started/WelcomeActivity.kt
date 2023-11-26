@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.home
+package com.ps420.semaphoreapps.ui.get_started
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,4 +9,5 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
     }
+
 }
