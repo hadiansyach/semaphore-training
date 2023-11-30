@@ -1,8 +1,10 @@
 package com.ps420.semaphoreapps.ui.learn
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ps420.semaphoreapps.databinding.ActivityResultBinding
+import com.ps420.semaphoreapps.ui.home.HomeActivity
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -15,9 +17,15 @@ class ResultActivity : AppCompatActivity() {
         val correctValue = intent.getStringExtra(CORRECT_VALUE)
         val totalValue = intent.getStringExtra(TOTAL)
 
-        binding.correctAnswer.text = correctValue
-        binding.totalAnswer.text = totalValue
-
+        val homeIntent = Intent(this, HomeActivity::class.java)
+        homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        binding.apply {
+            correctAnswer.text = correctValue
+            totalAnswer.text = totalValue
+            btnBackHome.setOnClickListener {
+                startActivity(homeIntent)
+            }
+        }
     }
 
 

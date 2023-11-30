@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.learn.ResultActivity">
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-
-
     <TextView
         android:id="@+id/correctAnswer"
         android:layout_width="wrap_content"
@@ -37,11 +28,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btnBackHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:padding="8dp"
-        android:text="Go to Home"
+        android:text="@string/back_home_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
