@@ -1,13 +1,17 @@
 package com.ps420.semaphoreapps.ui.translate
 
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import com.ps420.semaphoreapps.databinding.ActivityTranslateBinding
 import com.ps420.semaphoreapps.ui.component.ModalBottomSheetFragment
 
 class TranslateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTranslateBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTranslateBinding.inflate(layoutInflater)
@@ -19,8 +23,15 @@ class TranslateActivity : AppCompatActivity() {
     private fun modalBottomSheet() {
         binding.btnTakeImage.setOnClickListener {
             val bottomSheet = ModalBottomSheetFragment()
-            supportFragmentManager.let { bottomSheet.show(it, ModalBottomSheetFragment.TAG) }
+            bottomSheet.show(supportFragmentManager, ModalBottomSheetFragment.TAG)
             Log.d(TAG, "onCreate: $bottomSheet")
+        }
+    }
+
+    fun showImage(uri: Uri?) {
+        uri?.let {
+            binding.imgDataset.setImageURI(it)
+            Log.d("IMAGE URI", "showImage: $it")
         }
     }
 
