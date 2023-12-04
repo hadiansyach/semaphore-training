@@ -8,8 +8,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="180dp"
-        android:layout_height="310dp"
+        android:layout_width="230dp"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
@@ -33,7 +33,7 @@
         android:layout_margin="16dp"
         android:gravity="center|top"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnGetStarted"
+        app:layout_constraintBottom_toTopOf="@+id/btnTakeImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,14 +67,18 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnGetStarted"
+        android:id="@+id/btnTakeImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/primary_100"
+        android:backgroundTint="@color/secondary_100"
         android:paddingVertical="12dp"
-        android:text="@string/upload_image"
+        android:text="@string/take_image"
+        android:textColor="@color/black_primary"
         app:cornerRadius="10dp"
+        app:icon="@drawable/ic_take_image"
+        app:iconGravity="textStart"
+        app:iconTint="@color/black_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

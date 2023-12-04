@@ -3,7 +3,6 @@ package com.ps420.semaphoreapps.ui.get_started
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.databinding.ActivityWelcomeBinding
 import com.ps420.semaphoreapps.ui.home.HomeActivity
 
