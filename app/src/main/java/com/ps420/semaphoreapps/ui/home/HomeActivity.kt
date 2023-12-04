@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.databinding.ActivityHomeBinding
+import com.ps420.semaphoreapps.databinding.ActivityLearnBinding
 import com.ps420.semaphoreapps.ui.learn.LearnActivity
 import com.ps420.semaphoreapps.ui.setting.SettingActivity
 import com.ps420.semaphoreapps.ui.translate.TranslateActivity
@@ -15,13 +16,10 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-//        Button
         binding.btnLearn.setOnClickListener {
             val intent = Intent(this, LearnActivity::class.java)
             startActivity(intent)
         }
-
         binding.btnPractice.setOnClickListener {
             val intent = Intent(this, LearnActivity::class.java)
             startActivity(intent)
@@ -36,5 +34,6 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

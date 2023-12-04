@@ -29,11 +29,11 @@
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <ImageView
-            android:id="@+id/imgDataset"
+            android:id="@+id/imgSignQuestion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_data_a" />
+            android:src="@drawable/sign_a" />
 
     </androidx.cardview.widget.CardView>
 
@@ -45,71 +45,93 @@
         app:layout_constraintGuide_percent="0.06" />
 
     <TextView
+        android:id="@+id/tvCountdownTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="00:15"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/txtInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/guess_the_character_based_on_photo_above"
+        android:layout_marginTop="18dp"
+        android:text="@string/tvQuestionTitle"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/secondary_100"
-        android:gravity="start|center_vertical"
-        android:paddingVertical="4dp"
-        android:text="@string/stop"
-        android:textColor="@color/black_primary"
-        app:cornerRadius="12dp"
-        app:icon="@drawable/ic_stop"
-        app:iconTint="@color/black_primary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtField" />
+<!--    <Button-->
+<!--        android:id="@+id/btnNext"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:backgroundTint="@color/primary_100"-->
+<!--        android:gravity="start|center_vertical"-->
+<!--        android:paddingVertical="4dp"-->
+<!--        android:text="@string/stop"-->
+<!--        app:cornerRadius="12dp"-->
+<!--        app:icon="@drawable/ic_next"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:layout_editor_absoluteY="413dp" />-->
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
+    <android.widget.Button
+        android:id="@+id/btnOption1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/secondary_100"
-        android:gravity="start|center_vertical"
-        android:paddingVertical="4dp"
-        android:text="@string/stop"
-        android:textColor="@color/black_primary"
-        app:cornerRadius="12dp"
-        app:icon="@drawable/ic_next"
-        app:iconTint="@color/black_primary"
-        app:layout_constraintBottom_toBottomOf="@+id/btnStop"
+        android:layout_margin="24dp"
+        tools:text="A"
+        android:onClick="option1Clicked"
+        android:background="@drawable/option_bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnStop" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="12dp"
-        android:hint="@string/enter_your_answer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtInstruction">
+        app:layout_constraintTop_toBottomOf="@+id/txtInstruction"
+        tools:ignore="UsingOnClickInXml" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+    <android.widget.Button
+        android:id="@+id/btnOption2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:onClick="option2Clicked"
+        android:background="@drawable/option_bg"
+        tools:text="B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption1"
+        tools:ignore="UsingOnClickInXml" />
 
+    <android.widget.Button
+        android:id="@+id/btnOption3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:background="@drawable/option_bg"
+        tools:text="C"
+        android:onClick="option3Clicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption2"
+        tools:ignore="UsingOnClickInXml" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
+    <android.widget.Button
+        android:id="@+id/btnOption4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:onClick="option4Clicked"
+        android:background="@drawable/option_bg"
+        tools:text="D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption3"
+        tools:ignore="UsingOnClickInXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>
