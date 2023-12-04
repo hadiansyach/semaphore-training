@@ -4,8 +4,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.PickVisualMediaRequest
-import androidx.activity.result.contract.ActivityResultContracts
 import com.ps420.semaphoreapps.databinding.ActivityTranslateBinding
 import com.ps420.semaphoreapps.ui.component.ModalBottomSheetFragment
 
@@ -24,7 +22,6 @@ class TranslateActivity : AppCompatActivity() {
         binding.btnTakeImage.setOnClickListener {
             val bottomSheet = ModalBottomSheetFragment()
             bottomSheet.show(supportFragmentManager, ModalBottomSheetFragment.TAG)
-            Log.d(TAG, "onCreate: $bottomSheet")
         }
     }
 
