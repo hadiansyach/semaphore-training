@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.learn
+package com.ps420.semaphoreapps.ui.challenge
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ import com.ps420.semaphoreapps.model.LearnData
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
-class LearnActivity : AppCompatActivity() {
+class ChallengeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLearnBinding
     private lateinit var questionsList: List<LearnData>
     private var index: Int = 0

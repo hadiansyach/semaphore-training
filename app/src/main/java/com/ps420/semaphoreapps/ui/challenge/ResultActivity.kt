@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.learn
+package com.ps420.semaphoreapps.ui.challenge
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
