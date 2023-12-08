@@ -6,34 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".ui.challenge.ResultActivity">
 
-    <TextView
-        android:id="@+id/correctAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+    <ImageView
+        android:id="@+id/imgResult"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/illustrator_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="26dp"
-        android:textSize="16sp"
-        android:text="10" />
-
-
-    <TextView
-        android:id="@+id/totalAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:text="10"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/correctAnswer"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgResult">
+
+        <TextView
+            android:id="@+id/labelTotalAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/total_answer"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/labelTotalAnswer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/labelTotalAnswer" />
+
+        <ImageView
+            android:src="@drawable/ic_check"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/imgCorrect"
+            app:layout_constraintStart_toStartOf="@+id/labelTotalAnswer"
+            app:layout_constraintTop_toBottomOf="@id/labelTotalAnswer"
+            android:layout_marginTop="21dp"
+            app:tint="@color/success" />
+        <TextView
+            android:id="@+id/labelCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/correct"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:textColor="@color/success"
+            app:layout_constraintStart_toEndOf="@+id/imgCorrect"
+            app:layout_constraintTop_toTopOf="@id/imgCorrect"
+            app:layout_constraintBottom_toBottomOf="@id/imgCorrect" />
+
+        <TextView
+            android:id="@+id/correctAnswer"
+            android:textColor="@color/success"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/labelCorrect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/labelCorrect" />
+
+        <ImageView
+            android:id="@+id/imgWrong"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/ic_wrong"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imgCorrect"
+            app:layout_constraintTop_toBottomOf="@id/imgCorrect"
+            app:tint="@color/error" />
+
+        <TextView
+            android:id="@+id/labelWrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/wrong"
+            android:textColor="@color/error"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgWrong"
+            app:layout_constraintStart_toEndOf="@+id/imgWrong"
+            app:layout_constraintTop_toTopOf="@+id/imgWrong" />
+
+        <TextView
+            android:id="@+id/wrongAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="0"
+            android:textColor="@color/error"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/labelWrong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/labelWrong" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <Button
         android:id="@+id/btnBackHome"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:padding="8dp"
+        android:backgroundTint="@color/accent_80"
+        android:paddingVertical="12dp"
         android:text="@string/back_home_text"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
