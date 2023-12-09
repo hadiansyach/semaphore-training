@@ -116,4 +116,7 @@
 
     <string name="switchDarkLight">Switch to %1$s mode</string>
     <string name="back_home_text">Go to Home</string>
+    <string name="wrong">Wrong</string>
+    <string name="correct">Correct</string>
+    <string name="total_answer">Total Answer</string>
 </resources>
