@@ -36,8 +36,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:src="@drawable/ic_semaphore" />
+            android:src="@drawable/logo_semaphore_nobackground" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
