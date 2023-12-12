@@ -33,7 +33,7 @@ object FakeLearnDataSource {
         LearnData(R.drawable.sign_z, "Q", "G", "N", "Z", "Z"),
     )
 
-    private val selectedQuestions = fakeQuestionList.shuffled().take(3).toMutableList()
+    private val selectedQuestions = fakeQuestionList.shuffled().take(10).toMutableList()
 
     fun getQuestions(): List<LearnData> {
         selectedQuestions.shuffle()
