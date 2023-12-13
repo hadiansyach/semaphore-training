@@ -1,10 +1,10 @@
-package com.ps420.semaphoreapps.ui.get_started
+package com.ps420.semaphoreapps.view.get_started
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ps420.semaphoreapps.databinding.ActivityWelcomeBinding
-import com.ps420.semaphoreapps.ui.home.HomeActivity
+import com.ps420.semaphoreapps.view.home.HomeActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding

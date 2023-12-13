@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.splashscreen
+package com.ps420.semaphoreapps.view.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.ps420.semaphoreapps.R
-import com.ps420.semaphoreapps.ui.get_started.WelcomeActivity
+import com.ps420.semaphoreapps.view.get_started.WelcomeActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
