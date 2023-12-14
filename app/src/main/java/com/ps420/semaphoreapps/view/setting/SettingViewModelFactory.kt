@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.setting
+package com.ps420.semaphoreapps.view.setting
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

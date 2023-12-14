@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.setting
+package com.ps420.semaphoreapps.view.setting
 
 import android.content.Context
 import androidx.datastore.core.DataStore

@@ -1,12 +1,12 @@
-package com.ps420.semaphoreapps.ui.home
+package com.ps420.semaphoreapps.view.home
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.databinding.ActivityHomeBinding
-import com.ps420.semaphoreapps.ui.challenge.ChallengeActivity
-import com.ps420.semaphoreapps.ui.setting.SettingActivity
-import com.ps420.semaphoreapps.ui.translate.TranslateActivity
+import com.ps420.semaphoreapps.view.challenge.ChallengeActivity
+import com.ps420.semaphoreapps.view.setting.SettingActivity
+import com.ps420.semaphoreapps.view.translate.TranslateActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding

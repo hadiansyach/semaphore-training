@@ -1,10 +1,10 @@
-package com.ps420.semaphoreapps.ui.challenge
+package com.ps420.semaphoreapps.view.challenge
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ps420.semaphoreapps.databinding.ActivityResultBinding
-import com.ps420.semaphoreapps.ui.home.HomeActivity
+import com.ps420.semaphoreapps.view.home.HomeActivity
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
