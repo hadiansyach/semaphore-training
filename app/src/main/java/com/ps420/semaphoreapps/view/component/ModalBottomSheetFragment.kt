@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ps420.semaphoreapps.databinding.FragmentModalBottomSheetBinding
+import com.ps420.semaphoreapps.utils.getImageUri
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
 
 class ModalBottomSheetFragment : BottomSheetDialogFragment() {
