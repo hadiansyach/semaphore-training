@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permission -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -19,7 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STRAP"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.quiz.ExperimentResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.QuizActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.challenge.ResultActivity"
             android:exported="false" />
@@ -46,17 +53,19 @@
             android:exported="false" />
         <activity
             android:name=".ui.get_started.WelcomeActivity"
-            android:exported="false" />
-
-        <!-- Trigger Google Play services to install the backported photo picker module. -->
-        <service android:name="com.google.android.gms.metadata.ModuleDependencies"
+            android:exported="false" /> <!-- Trigger Google Play services to install the backported photo picker module. -->
+        <service
+            android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
             android:exported="false"
             tools:ignore="MissingClass">
             <intent-filter>
                 <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
             </intent-filter>
-            <meta-data android:name="photopicker_activity:0:required" android:value="" />
+
+            <meta-data
+                android:name="photopicker_activity:0:required"
+                android:value="" />
         </service>
     </application>
 
