@@ -1,156 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--TODO (STEP 5: Design the result activity layout.)-->
+<!--START-->
+<!--1. Add the trophy image to the drawable folders.-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_bg"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
     tools:context=".ui.challenge.ResultActivity">
 
-    <ImageView
-        android:id="@+id/imgResultExp"
-        android:layout_width="0dp"
-        android:layout_height="240dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/illustrator_result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvUsername"/>
-
     <TextView
-        android:id="@+id/tvUsername"
+        android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Congratulations! $name"
-        app:layout_constraintTop_toBottomOf="@+id/imgResultExp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/totalAnswerBorder"
-        />
+        android:layout_marginTop="25dp"
+        android:text="Result"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/totalAnswerBorder"
-        android:layout_width="0dp"
+    <ImageView
+        android:id="@+id/iv_trophy"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:contentDescription="image"
+        android:src="@drawable/ic_trophy" />
+
+    <TextView
+        android:id="@+id/tv_congratulations"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:elevation="2dp"
+        android:text="Hey, Congratulations!"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgResultExp">
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Username" />
 
-        <TextView
-            android:id="@+id/labelTotalAnswerExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/total_answer"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:text="Your Score is 9 out of 10" />
 
-        <TextView
-            android:id="@+id/totalAnswerExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="0"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/labelTotalAnswerExp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/labelTotalAnswerExp" />
-
-        <ImageView
-            android:src="@drawable/ic_check"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:id="@+id/imgCorrect"
-            app:layout_constraintStart_toStartOf="@+id/labelTotalAnswerExp"
-            app:layout_constraintTop_toBottomOf="@id/labelTotalAnswerExp"
-            android:layout_marginTop="21dp"
-            app:tint="@color/success" />
-        <TextView
-            android:id="@+id/labelCorrectExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/correct"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:textColor="@color/success"
-            app:layout_constraintStart_toEndOf="@+id/imgCorrect"
-            app:layout_constraintTop_toTopOf="@id/imgCorrect"
-            app:layout_constraintBottom_toBottomOf="@id/imgCorrect" />
-
-        <TextView
-            android:id="@+id/correctAnswerExp"
-            android:textColor="@color/success"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="0"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelCorrectExp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/labelCorrectExp" />
-
-        <ImageView
-            android:id="@+id/imgWrongExp"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="21dp"
-            android:src="@drawable/ic_wrong"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imgCorrect"
-            app:layout_constraintTop_toBottomOf="@id/imgCorrect"
-            app:tint="@color/error" />
-
-        <TextView
-            android:id="@+id/labelWrongExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/wrong"
-            android:textColor="@color/error"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgWrongExp"
-            app:layout_constraintStart_toEndOf="@+id/imgWrongExp"
-            app:layout_constraintTop_toTopOf="@+id/imgWrongExp" />
-
-        <TextView
-            android:id="@+id/wrongAnswerExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="0"
-            android:textColor="@color/error"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelWrongExp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/labelWrongExp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <Button
-        android:id="@+id/btnBackHomeExp"
-        style="@style/Widget.MaterialComponents.Button"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_finish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/accent_80"
-        android:paddingVertical="12dp"
-        android:text="@string/back_home_text"
-        android:textAllCaps="false"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:text="FINISH"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>

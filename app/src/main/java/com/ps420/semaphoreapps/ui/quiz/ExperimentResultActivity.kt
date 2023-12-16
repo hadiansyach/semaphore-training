@@ -22,12 +22,10 @@ class ExperimentResultActivity : AppCompatActivity() {
         val correctAnswer = intent.getIntExtra(CORRECT_ANSWER, 0)
         val username = intent.getStringExtra(USER_NAME)
         binding.apply {
-            tvUsername.text = username
-            totalAnswerExp.text = correctAnswer.toString()
-            correctAnswerExp.text = totalQuestion.toString()
-
+            tvName.text = username
+            tvScore.text = "Your Score is ${correctAnswer} out of ${totalQuestion}"
         }
-        binding.btnBackHomeExp.setOnClickListener {
+        binding.btnFinish.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }

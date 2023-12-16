@@ -18,6 +18,7 @@ class StartActivity : AppCompatActivity() {
             if (etUsername.isNotEmpty()) {
                 val quizActivity = Intent(this, QuizActivity::class.java)
                 quizActivity.putExtra(USER_NAME, etUsername)
+                startActivity(quizActivity)
                 finish()
             } else {
                 Toast.makeText(this, "Input Username!", Toast.LENGTH_SHORT).show()
