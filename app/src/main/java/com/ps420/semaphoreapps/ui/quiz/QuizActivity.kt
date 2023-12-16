@@ -20,6 +20,7 @@ import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.USER_NAME
 import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.getShuffledQuestions
 import com.ps420.semaphoreapps.model.LearnDataExperimental
 import com.ps420.semaphoreapps.ui.challenge.ResultActivity
+import com.tomlecollegue.progressbars.HorizontalProgressView
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -31,7 +32,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
     private var mUserName: String? = null
     private var mCorrectAnswer: Int = 0
 
-    private var progressBar: ProgressBar? = null
+    private var progressBar: HorizontalProgressView? = null
     private var tvProgress: TextView? = null
     private var tvQuestion: TextView? = null
     private var ivImage: ImageView? = null
@@ -87,7 +88,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
             val question : LearnDataExperimental = questionsList[currentPosition - 1]
 
             ivImage?.setImageResource(question.image)
-            progressBar?.progress = currentPosition
+            progressBar?.progress = currentPosition*20
 
             tvProgress?.text = "$currentPosition/${questionsList.size}"
             tvQuestion?.text = question.question
@@ -190,6 +191,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                                     val intent = Intent(this, ExperimentResultActivity::class.java)
                                     intent.putExtra(CORRECT_ANSWER, mCorrectAnswer)
                                     intent.putExtra(TOTAL_QUESTIONS, mQuestionList?.size)
+                                    intent.putExtra(USER_NAME, mUserName)
                                     startActivity(intent)
                                     finish()
                                 }

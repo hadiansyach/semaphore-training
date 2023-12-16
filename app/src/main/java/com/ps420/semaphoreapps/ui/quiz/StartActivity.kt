@@ -3,6 +3,7 @@ package com.ps420.semaphoreapps.ui.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.ps420.semaphoreapps.databinding.ActivityStartBinding
 import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.USER_NAME
@@ -14,10 +15,11 @@ class StartActivity : AppCompatActivity() {
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnStart.setOnClickListener {
-            val etUsername = binding.etName.toString()
-            if (etUsername.isNotEmpty()) {
+            val username = binding.etName.text.toString()
+            if (username.isNotEmpty()) {
                 val quizActivity = Intent(this, QuizActivity::class.java)
-                quizActivity.putExtra(USER_NAME, etUsername)
+                quizActivity.putExtra(USER_NAME, username)
+                Log.i("startActivity", "username: $username")
                 startActivity(quizActivity)
                 finish()
             } else {

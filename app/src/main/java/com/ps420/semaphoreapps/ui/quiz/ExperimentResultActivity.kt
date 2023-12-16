@@ -3,6 +3,7 @@ package com.ps420.semaphoreapps.ui.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.databinding.ActivityExperimentResultBinding
 import com.ps420.semaphoreapps.databinding.ActivityHomeBinding
@@ -20,8 +21,9 @@ class ExperimentResultActivity : AppCompatActivity() {
 
         val totalQuestion = intent.getIntExtra(TOTAL_QUESTIONS, 0)
         val correctAnswer = intent.getIntExtra(CORRECT_ANSWER, 0)
-        val username = intent.getStringExtra(USER_NAME)
         binding.apply {
+            val username = intent.getStringExtra(USER_NAME)
+            Log.i("ExperimentResultActivity", "username: $username")
             tvName.text = username
             tvScore.text = "Your Score is ${correctAnswer} out of ${totalQuestion}"
         }
