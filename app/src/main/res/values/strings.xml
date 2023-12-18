@@ -124,4 +124,15 @@
     <string name="txt_description">Semaphore Translator Apps (STRAP) is an application that is
      intended as an aid in understanding semaphore symbols. Now with Semaphore Translator Apps
      (STRAP),you can learn and decode semaphore symbols easily and fun!</string>
+
+    <!-- Night Mode Preferences -->
+    <string name="pref_dark_title">Dark mode</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+
 </resources>
