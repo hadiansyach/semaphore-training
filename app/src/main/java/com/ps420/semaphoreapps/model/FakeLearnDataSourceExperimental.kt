@@ -4,9 +4,6 @@ import com.ps420.semaphoreapps.R
 
 object FakeLearnDataSourceExperimental {
 
-    const val USER_NAME: String = "user_name"
-    const val TOTAL_QUESTIONS: String = "total_questions"
-    const val CORRECT_ANSWER: String = "correct_answers"
 
     // START
     fun getQuestions(): ArrayList<LearnDataExperimental> {
@@ -53,7 +50,7 @@ object FakeLearnDataSourceExperimental {
         val questionsList = getQuestions()
         questionsList.shuffle()
 
-        val selectedQuestions = ArrayList(questionsList.subList(0, 5)) // change the length of questions
+        val selectedQuestions = ArrayList(questionsList.subList(0, 10)) // change the length of questions
         return selectedQuestions
     }
 }

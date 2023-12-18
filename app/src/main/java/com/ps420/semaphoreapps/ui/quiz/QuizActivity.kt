@@ -7,19 +7,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.ps420.semaphoreapps.R
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.CORRECT_ANSWER
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.TOTAL_QUESTIONS
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.USER_NAME
+import com.ps420.semaphoreapps.model.Constants.CORRECT_ANSWER
+import com.ps420.semaphoreapps.model.Constants.TOTAL_QUESTIONS
+import com.ps420.semaphoreapps.model.Constants.USER_NAME
 import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.getShuffledQuestions
 import com.ps420.semaphoreapps.model.LearnDataExperimental
-import com.ps420.semaphoreapps.ui.challenge.ResultActivity
 import com.tomlecollegue.progressbars.HorizontalProgressView
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener{
@@ -82,13 +79,12 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
     fun setQuestionList() {
         defaultOptionsView()
-        mQuestionList?.let {
-            val questionsList = it
+        mQuestionList?.let { questionsList ->
             var currentPosition = mCurrentPosition
             val question : LearnDataExperimental = questionsList[currentPosition - 1]
 
             ivImage?.setImageResource(question.image)
-            progressBar?.progress = currentPosition*20
+            progressBar?.progress = currentPosition*questionsList.size
 
             tvProgress?.text = "$currentPosition/${questionsList.size}"
             tvQuestion?.text = question.question

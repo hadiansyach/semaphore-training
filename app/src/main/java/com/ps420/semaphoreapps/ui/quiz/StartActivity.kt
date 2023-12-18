@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.ps420.semaphoreapps.databinding.ActivityStartBinding
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.USER_NAME
+import com.ps420.semaphoreapps.model.Constants.USER_NAME
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding

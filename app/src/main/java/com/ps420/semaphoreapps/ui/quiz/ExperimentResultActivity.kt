@@ -1,16 +1,16 @@
 package com.ps420.semaphoreapps.ui.quiz
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.databinding.ActivityExperimentResultBinding
-import com.ps420.semaphoreapps.databinding.ActivityHomeBinding
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.CORRECT_ANSWER
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.TOTAL_QUESTIONS
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.USER_NAME
+import com.ps420.semaphoreapps.model.Constants.CORRECT_ANSWER
+import com.ps420.semaphoreapps.model.Constants.TOTAL_QUESTIONS
+import com.ps420.semaphoreapps.model.Constants.USER_NAME
 import com.ps420.semaphoreapps.ui.home.HomeActivity
+import com.tomlecollegue.progressbars.CircleProgressView
 
 class ExperimentResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityExperimentResultBinding
@@ -21,11 +21,22 @@ class ExperimentResultActivity : AppCompatActivity() {
 
         val totalQuestion = intent.getIntExtra(TOTAL_QUESTIONS, 0)
         val correctAnswer = intent.getIntExtra(CORRECT_ANSWER, 0)
+        val username = intent.getStringExtra(USER_NAME)
+
+        val circleProgressView = findViewById<CircleProgressView>(R.id.circleProgressResult)
+        circleProgressView.progress = (correctAnswer*totalQuestion)
+
+        if (circleProgressView.progress == 100) {
+            binding.txtHeaderResult.text = "Congratulations, you guessed it all!"
+        } else if (circleProgressView.progress < 100) {
+            binding.txtHeaderResult.text = "Here is your score"
+        }
+
         binding.apply {
-            val username = intent.getStringExtra(USER_NAME)
-            Log.i("ExperimentResultActivity", "username: $username")
-            tvName.text = username
-            tvScore.text = "Your Score is ${correctAnswer} out of ${totalQuestion}"
+            name.text = username
+            totalNumber.text = totalQuestion.toString()
+            correctNumber.text = correctAnswer.toString()
+            wrongNumber.text = (totalQuestion - correctAnswer).toString()
         }
         binding.btnFinish.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
