@@ -20,6 +20,7 @@ class TranslateActivity : AppCompatActivity() {
         ViewModelFactory.getInstance(this)
     }
     private var currentImageUri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTranslateBinding.inflate(layoutInflater)
@@ -78,6 +79,10 @@ class TranslateActivity : AppCompatActivity() {
                 progressBarUploadImage.visibility = View.GONE
             }
         }
+    }
+
+    fun getImageUri(uri: Uri?) {
+        currentImageUri = uri
     }
 
     private fun modalBottomSheet() {

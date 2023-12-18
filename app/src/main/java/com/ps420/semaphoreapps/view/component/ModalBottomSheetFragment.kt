@@ -17,7 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ps420.semaphoreapps.databinding.FragmentModalBottomSheetBinding
-import com.ps420.semaphoreapps.utils.getImageUri
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
 
 class ModalBottomSheetFragment : BottomSheetDialogFragment() {
@@ -74,6 +73,7 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
         if (uri != null) {
             currentImageUri = uri
             (activity as TranslateActivity).showImage(currentImageUri)
+            (activity as TranslateActivity).getImageUri(currentImageUri)
             dismiss()
         } else {
             Log.e("Photo Picker", "onActivityResult: uri is null")
@@ -108,6 +108,7 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
             if (imageUri != null) {
                 currentImageUri = imageUri
                 (requireActivity() as TranslateActivity).showImage(currentImageUri)
+                (requireActivity() as TranslateActivity).getImageUri(currentImageUri)
                 dismiss()
             } else {
                 Log.e("Camera", "onActivityResult: imageUri is null")
