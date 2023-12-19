@@ -1,18 +1,18 @@
 package com.ps420.semaphoreapps.view.translate
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.ps420.semaphoreapps.utils.uriToFile
+import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.databinding.ActivityTranslateBinding
+import com.ps420.semaphoreapps.utils.Result
 import com.ps420.semaphoreapps.utils.reduceFileImage
+import com.ps420.semaphoreapps.utils.uriToFile
 import com.ps420.semaphoreapps.view.ViewModelFactory
 import com.ps420.semaphoreapps.view.component.ModalBottomSheetFragment
-import com.ps420.semaphoreapps.utils.Result
 
 class TranslateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTranslateBinding
@@ -35,6 +35,9 @@ class TranslateActivity : AppCompatActivity() {
         binding.btnUploadImage.setOnClickListener {
             uploadImage()
         }
+        binding.fabClearText.setOnClickListener {
+            binding.txtInputTranslate.setText("")
+        }
     }
 
     private fun uploadImage() {
@@ -53,8 +56,10 @@ class TranslateActivity : AppCompatActivity() {
                     is Result.Success -> {
                         showLoading(false)
                         // testing response api
+                        val predictedText = result.data.message.predictedClass
+                        val confidenceText = result.data.message.confidence
                         showToast("Detected semaphore: ${result.data.message.predictedClass}")
-                        showToast("Detected semaphore: ${result.data.message.confidence}")
+                        appendTextToTextInputLayout(predictedText)
                     }
 
                     is Result.Error -> {
@@ -67,18 +72,19 @@ class TranslateActivity : AppCompatActivity() {
         } ?: showToast("No image selected provided")
     }
 
+    private fun appendTextToTextInputLayout(newText: String) {
+        val currentText = binding.txtInputTranslate.text.toString()
+        val updatedText = if (currentText.isEmpty()) newText else "$currentText$newText"
+        binding.txtInputTranslate.setText(updatedText)
+    }
+
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding.apply {
-            if (isLoading) {
-                progressBarUploadImage.visibility = View.VISIBLE
-            } else {
-                progressBarUploadImage.visibility = View.GONE
-            }
-        }
+        binding.progressBarUploadImage.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     fun getImageUri(uri: Uri?) {

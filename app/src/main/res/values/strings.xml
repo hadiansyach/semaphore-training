@@ -110,7 +110,7 @@
     <string name="previous">Previous</string>
 
     <string name="take_image">Take Image</string>
-    <string name="semaphore_detected">Semaphore Detected</string>
+    <string name="semaphore_detected">Semaphore Detected :</string>
     <string name="format_string">%s</string>
 
     <string name="switchDarkLight">Switch to %1$s mode</string>
