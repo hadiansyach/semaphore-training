@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.R
-import com.ps420.semaphoreapps.databinding.ActivityExperimentResultBinding
+import com.ps420.semaphoreapps.databinding.ActivityQuizResultBinding
 import com.ps420.semaphoreapps.model.Constants.CORRECT_ANSWER
 import com.ps420.semaphoreapps.model.Constants.TOTAL_QUESTIONS
 import com.ps420.semaphoreapps.model.Constants.USER_NAME
@@ -12,10 +12,10 @@ import com.ps420.semaphoreapps.view.home.HomeActivity
 import com.tomlecollegue.progressbars.CircleProgressView
 
 class QuizResultActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityExperimentResultBinding
+    private lateinit var binding: ActivityQuizResultBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityExperimentResultBinding.inflate(layoutInflater)
+        binding = ActivityQuizResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val totalQuestion = intent.getIntExtra(TOTAL_QUESTIONS, 0)
