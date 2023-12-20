@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.databinding.ActivityHomeBinding
 import com.ps420.semaphoreapps.view.challenge.ChallengeActivity
-import com.ps420.semaphoreapps.view.quiz.StartActivity
+import com.ps420.semaphoreapps.view.quiz.StartQuizActivity
 import com.ps420.semaphoreapps.view.setting.SettingActivity
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
 
@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLearn.setOnClickListener {
-            val intent = Intent(this, StartActivity::class.java)
+            val intent = Intent(this, StartQuizActivity::class.java)
             startActivity(intent)
         }
         binding.btnChallenge.setOnClickListener {

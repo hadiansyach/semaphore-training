@@ -22,7 +22,7 @@
             android:name=".view.quiz.ExperimentResultActivity"
             android:exported="false" />
         <activity
-            android:name=".view.quiz.StartActivity"
+            android:name=".view.quiz.StartQuizActivity"
             android:exported="false" />
         <activity
             android:name=".view.quiz.QuizActivity"
