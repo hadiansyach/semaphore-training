@@ -11,7 +11,7 @@ import com.ps420.semaphoreapps.model.Constants.USER_NAME
 import com.ps420.semaphoreapps.view.home.HomeActivity
 import com.tomlecollegue.progressbars.CircleProgressView
 
-class ExperimentResultActivity : AppCompatActivity() {
+class QuizResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityExperimentResultBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
