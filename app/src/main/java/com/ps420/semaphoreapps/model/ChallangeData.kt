@@ -1,6 +1,6 @@
 package com.ps420.semaphoreapps.model
 
-data class LearnData (
+data class ChallangeData (
     val imageDrawable: Int,
     val option1: String,
     val option2: String,
