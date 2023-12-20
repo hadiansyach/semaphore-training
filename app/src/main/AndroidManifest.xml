@@ -19,6 +19,12 @@
         android:theme="@style/Theme.STRAP"
         tools:targetApi="31">
         <activity
+            android:name=".view.learn.LearnDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.learn.LearnActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.quiz.QuizResultActivity"
             android:exported="false" />
         <activity

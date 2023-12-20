@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -55,4 +56,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("com.github.TomLeCollegue:ProgressBar-Library-Android-Kotlin:0.1.1")
+    implementation("com.github.MikeOrtiz:TouchImageView:3.6")
 }
