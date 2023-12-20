@@ -1,15 +1,14 @@
-package com.ps420.semaphoreapps.ui.quiz
+package com.ps420.semaphoreapps.view.quiz
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.databinding.ActivityExperimentResultBinding
 import com.ps420.semaphoreapps.model.Constants.CORRECT_ANSWER
 import com.ps420.semaphoreapps.model.Constants.TOTAL_QUESTIONS
 import com.ps420.semaphoreapps.model.Constants.USER_NAME
-import com.ps420.semaphoreapps.ui.home.HomeActivity
+import com.ps420.semaphoreapps.view.home.HomeActivity
 import com.tomlecollegue.progressbars.CircleProgressView
 
 class ExperimentResultActivity : AppCompatActivity() {

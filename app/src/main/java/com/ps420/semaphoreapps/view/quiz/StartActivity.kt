@@ -1,4 +1,4 @@
-package com.ps420.semaphoreapps.ui.quiz
+package com.ps420.semaphoreapps.view.quiz
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

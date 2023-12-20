@@ -19,22 +19,22 @@
         android:theme="@style/Theme.STRAP"
         tools:targetApi="31">
         <activity
-            android:name=".ui.quiz.ExperimentResultActivity"
+            android:name=".view.quiz.ExperimentResultActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.quiz.StartActivity"
+            android:name=".view.quiz.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.quiz.QuizActivity"
+            android:name=".view.quiz.QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.challenge.ResultActivity"
+            android:name=".view.challenge.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.translate.TranslateActivity"
+            android:name=".view.translate.TranslateActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splashscreen.SplashScreen"
+            android:name=".view.splashscreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,16 +43,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.setting.SettingActivity"
+            android:name=".view.setting.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.challenge.ChallengeActivity"
+            android:name=".view.challenge.ChallengeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".view.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.get_started.WelcomeActivity"
+            android:name=".view.get_started.WelcomeActivity"
             android:exported="false" /> <!-- Trigger Google Play services to install the backported photo picker module. -->
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
