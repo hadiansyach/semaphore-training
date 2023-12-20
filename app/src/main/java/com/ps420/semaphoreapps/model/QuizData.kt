@@ -1,6 +1,6 @@
 package com.ps420.semaphoreapps.model
 
-data class LearnDataExperimental(
+data class QuizData(
     val id: Int,
     val question: String,
     val image: Int,

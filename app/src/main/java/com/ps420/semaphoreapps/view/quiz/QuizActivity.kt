@@ -15,15 +15,15 @@ import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.model.Constants.CORRECT_ANSWER
 import com.ps420.semaphoreapps.model.Constants.TOTAL_QUESTIONS
 import com.ps420.semaphoreapps.model.Constants.USER_NAME
-import com.ps420.semaphoreapps.model.FakeLearnDataSourceExperimental.getShuffledQuestions
-import com.ps420.semaphoreapps.model.LearnDataExperimental
+import com.ps420.semaphoreapps.model.QuizDataSource.getShuffledQuestions
+import com.ps420.semaphoreapps.model.QuizData
 import com.tomlecollegue.progressbars.HorizontalProgressView
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
 
     private var mCurrentPosition: Int = 1
-    private var mQuestionList: ArrayList<LearnDataExperimental>? = null
+    private var mQuestionList: ArrayList<QuizData>? = null
     private var mSelectedOptionPosition: Int = 0
     private var isSelectedAnswer: Boolean = false
     private var mUserName: String? = null
@@ -81,7 +81,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         defaultOptionsView()
         mQuestionList?.let { questionsList ->
             var currentPosition = mCurrentPosition
-            val question : LearnDataExperimental = questionsList[currentPosition - 1]
+            val question : QuizData = questionsList[currentPosition - 1]
 
             ivImage?.setImageResource(question.image)
             progressBar?.progress = currentPosition*questionsList.size
@@ -184,7 +184,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                                 }
                                 else -> {
 //                                    Toast.makeText(this,"Congratulation you made to the end",Toast.LENGTH_LONG).show()
-                                    val intent = Intent(this, ExperimentResultActivity::class.java)
+                                    val intent = Intent(this, QuizResultActivity::class.java)
                                     intent.putExtra(CORRECT_ANSWER, mCorrectAnswer)
                                     intent.putExtra(TOTAL_QUESTIONS, mQuestionList?.size)
                                     intent.putExtra(USER_NAME, mUserName)
