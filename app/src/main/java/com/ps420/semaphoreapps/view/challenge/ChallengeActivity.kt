@@ -7,27 +7,26 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import com.ps420.semaphoreapps.R
-import com.ps420.semaphoreapps.databinding.ActivityChallangeBinding
-import com.ps420.semaphoreapps.model.ChallangeDataSource
-import com.ps420.semaphoreapps.model.ChallangeData
+import com.ps420.semaphoreapps.databinding.ActivityLearnBinding
+import com.ps420.semaphoreapps.model.FakeLearnDataSource
+import com.ps420.semaphoreapps.model.LearnData
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 class ChallengeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityChallangeBinding
-    private lateinit var questionsList: List<ChallangeData>
+    private lateinit var binding: ActivityLearnBinding
+    private lateinit var questionsList: List<LearnData>
     private var index: Int = 0
-    private lateinit var questionModel: ChallangeData
+    private lateinit var questionModel: LearnData
     private var correctAnswerCount:Int = 0
     private var wrongAnswerCount:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChallangeBinding.inflate(layoutInflater)
+        binding = ActivityLearnBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        questionsList = ChallangeDataSource.getQuestions()
-
+        questionsList = FakeLearnDataSource.getQuestions()
         questionModel = questionsList[index]
 
         setAllQuestions()
