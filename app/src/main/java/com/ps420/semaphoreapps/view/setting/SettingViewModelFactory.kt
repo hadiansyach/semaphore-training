@@ -1,8 +1,8 @@
-package com.ps420.semaphoreapps.view.setting
-
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-
+//package com.ps420.semaphoreapps.view.setting
+//
+//import androidx.lifecycle.ViewModel
+//import androidx.lifecycle.ViewModelProvider
+//
 //class SettingViewModelFactory(private val preferences: SettingPreferences)
 //    : ViewModelProvider.NewInstanceFactory() {
 //    @Suppress("UNCHECKED_CAST")
