@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".view.challenge.ResultActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/txtHeaderResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/imgResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:maxLines="2"
+        tools:text="Congratulations, you guessed it all!" />
+
+<ImageView
+    android:id="@+id/imgResult"
+    android:layout_width="0dp"
+    android:layout_height="240dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/illustrator_result"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tomlecollegue.progressbars.CircleProgressView
+        android:id="@+id/circleProgressResult"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:colorProgress="@color/success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeaderResult" />
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/dashboard"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@color/white_primary"
+    android:elevation="2dp"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/circleProgressResult">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Username"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        tools:text="John Doe"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvTotalQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Total Question"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <TextView
+        android:id="@+id/totalNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalQuestion" />
+
+    <ImageView
+        android:src="@drawable/ic_check"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/imgCorrect"
+        app:layout_constraintStart_toStartOf="@+id/tvTotalQuestion"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalQuestion"
+        android:layout_marginTop="21dp"
+        app:tint="@color/success" />
+    <TextView
+        android:id="@+id/tvCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/correct"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/success"
+        app:layout_constraintStart_toEndOf="@+id/imgCorrect"
+        app:layout_constraintTop_toTopOf="@id/imgCorrect"
+        app:layout_constraintBottom_toBottomOf="@id/imgCorrect" />
+
+    <TextView
+        android:id="@+id/correctNumber"
+        android:textColor="@color/success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvCorrect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvCorrect" />
+
+    <ImageView
+        android:id="@+id/imgWrong"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/ic_wrong"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgCorrect"
+        app:layout_constraintTop_toBottomOf="@id/imgCorrect"
+        app:tint="@color/error" />
+
+    <TextView
+        android:id="@+id/tvWrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/wrong"
+        android:textColor="@color/error"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgWrong"
+        app:layout_constraintStart_toEndOf="@+id/imgWrong"
+        app:layout_constraintTop_toTopOf="@+id/imgWrong" />
+
+    <TextView
+        android:id="@+id/wrongNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        tools:text="0"
+        android:textColor="@color/error"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvWrong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvWrong" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<Button
+    android:id="@+id/btn_finish"
+    style="@style/Widget.MaterialComponents.Button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="@color/accent_80"
+    android:paddingVertical="12dp"
+    android:textColor="@color/white"
+    android:text="@string/back_home_text"
+    app:cornerRadius="12dp"
+    app:layout_constraintTop_toBottomOf="@id/dashboard"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

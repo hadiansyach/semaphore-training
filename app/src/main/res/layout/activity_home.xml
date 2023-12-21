@@ -53,10 +53,10 @@
 
         <ImageView
             android:id="@+id/imgSemaphoreFlag"
-            android:layout_width="64dp"
-            android:layout_height="36dp"
+            android:layout_width="94dp"
+            android:layout_height="66dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_semaphore" />
+            android:src="@drawable/logo_only" />
 
         <TextView
             android:id="@+id/txtSemaphoreTranslator"
