@@ -22,6 +22,7 @@ import com.ps420.semaphoreapps.databinding.FragmentModalBottomSheetBinding
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
 import java.io.ByteArrayOutputStream
 
+
 class ModalBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentModalBottomSheetBinding
     private var currentImageUri: Uri? = null
@@ -107,6 +108,7 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
     }
+
 
     //    result image from camera
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
