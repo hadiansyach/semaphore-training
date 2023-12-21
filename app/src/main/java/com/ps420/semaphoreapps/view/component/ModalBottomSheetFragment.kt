@@ -2,8 +2,10 @@ package com.ps420.semaphoreapps.view.component
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,6 +20,8 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ps420.semaphoreapps.databinding.FragmentModalBottomSheetBinding
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
+import java.io.ByteArrayOutputStream
+
 
 class ModalBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentModalBottomSheetBinding
@@ -47,6 +51,7 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
         }
     }
 
+    //    permission camera
     private fun checkCameraPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
             requireContext(),
@@ -58,11 +63,13 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
         requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_REQUEST_CODE)
     }
 
+    //    open camera
     private fun startCamera() {
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE)
     }
 
+    //    open gallery
     private fun startGallery() {
         launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     }
@@ -73,12 +80,14 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
         if (uri != null) {
             currentImageUri = uri
             (activity as TranslateActivity).showImage(currentImageUri)
+            (activity as TranslateActivity).getImageUri(currentImageUri)
             dismiss()
         } else {
             Log.e("Photo Picker", "onActivityResult: uri is null")
         }
     }
 
+    //    result camera permission
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -100,18 +109,30 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment() {
         }
     }
 
+
+    //    result image from camera
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-            val imageUri: Uri? = data?.data
-            if (imageUri != null) {
-                currentImageUri = imageUri
+            val imageBitmap: Bitmap? = data?.extras?.get("data") as? Bitmap
+            if (imageBitmap != null) {
+//                convert bitmap to uri
+                currentImageUri = setImageUri(requireContext(), imageBitmap)
                 (requireActivity() as TranslateActivity).showImage(currentImageUri)
+                (requireActivity() as TranslateActivity).getImageUri(currentImageUri)
                 dismiss()
             } else {
-                Log.e("Camera", "onActivityResult: imageUri is null")
+                Log.e("Camera", "onActivityResult: imageUri is $imageBitmap")
             }
         }
+    }
+
+    private fun setImageUri(context: Context, bitmap: Bitmap): Uri {
+        val bytes = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path: String =
+            MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "Title", null)
+        return Uri.parse(path)
     }
 
     companion object {

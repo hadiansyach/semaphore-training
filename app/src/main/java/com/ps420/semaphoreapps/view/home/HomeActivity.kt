@@ -22,11 +22,12 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, LearnActivity::class.java)
             startActivity(intent)
         }
+        
         binding.btnChallenge.setOnClickListener {
             val intent = Intent(this, StartQuizActivity::class.java)
             startActivity(intent)
         }
-
+        
         binding.btnTranslate.setOnClickListener {
             val intent = Intent(this, TranslateActivity::class.java)
             startActivity(intent)
