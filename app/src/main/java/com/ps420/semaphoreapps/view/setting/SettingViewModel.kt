@@ -17,4 +17,3 @@ class SettingViewModel(private val preferences: SettingPreferences) : ViewModel(
         }
     }
 }
-

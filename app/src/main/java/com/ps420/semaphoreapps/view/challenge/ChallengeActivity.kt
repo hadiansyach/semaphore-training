@@ -27,6 +27,7 @@ class ChallengeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         questionsList = ChallangeDataSource.getQuestions()
+
         questionModel = questionsList[index]
 
         setAllQuestions()
