@@ -15,19 +15,6 @@ import com.ps420.semaphoreapps.view.setting.dataStore
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        // observe dark-night theme
-        val preferences = SettingPreferences.getInstance(application.dataStore)
-        val settingViewModel = ViewModelProvider(this, SettingViewModelFactory(preferences)).get(
-            SettingViewModel::class.java
-        )
-        settingViewModel.getThemeSetting().observe(this) { isDarkModeActive: Boolean ->
-            if (isDarkModeActive) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
