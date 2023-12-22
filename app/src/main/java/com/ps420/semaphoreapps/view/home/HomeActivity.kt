@@ -8,6 +8,7 @@ import com.ps420.semaphoreapps.view.challenge.ChallengeActivity
 import com.ps420.semaphoreapps.view.learn.LearnActivity
 import com.ps420.semaphoreapps.view.quiz.QuizActivity
 import com.ps420.semaphoreapps.view.quiz.StartQuizActivity
+import com.ps420.semaphoreapps.view.setting.SettingActivity
 //import com.ps420.semaphoreapps.view.setting.SettingActivity
 import com.ps420.semaphoreapps.view.translate.TranslateActivity
 
@@ -34,8 +35,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.btnSetting.setOnClickListener {
-//            val intent = Intent(this, SettingActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
         }
 
     }

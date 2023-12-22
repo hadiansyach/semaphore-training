@@ -6,8 +6,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ViewModelProvider
 import com.ps420.semaphoreapps.R
 import com.ps420.semaphoreapps.view.get_started.WelcomeActivity
+import com.ps420.semaphoreapps.view.setting.SettingPreferences
+import com.ps420.semaphoreapps.view.setting.SettingViewModel
+import com.ps420.semaphoreapps.view.setting.SettingViewModelFactory
+import com.ps420.semaphoreapps.view.setting.dataStore
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +37,6 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 3000) // 3000 is the delayed time in milliseconds.
+
     }
 }
