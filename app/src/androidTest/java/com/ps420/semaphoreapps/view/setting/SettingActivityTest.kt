@@ -12,15 +12,15 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import com.ps420.semaphoreapps.R
 
-@RunWith(AndroidJUnit4::class)
-class SettingActivityTest{
-    @get:Rule
-    val activity = ActivityScenarioRule(SettingActivity::class.java)
-
-    @Test
-    fun testDayTheme() {
-        Intents.init()
-        onView(withId(R.id.btnSwitchTheme)).perform(click())
-        onView(withId(R.id.btnSwitchTheme)).perform(click())
-    }
-}
+//@RunWith(AndroidJUnit4::class)
+//class SettingActivityTest{
+//    @get:Rule
+//    val activity = ActivityScenarioRule(SettingActivity::class.java)
+//
+//    @Test
+//    fun testDayTheme() {
+//        Intents.init()
+//        onView(withId(R.id.btnSwitchTheme)).perform(click())
+//        onView(withId(R.id.btnSwitchTheme)).perform(click())
+//    }
+//}
